@@ -1,0 +1,14 @@
+https://material-applications-uk7c.onrender.com/
+
+I deployed the example frontend application as a Docker container to Render (render.com).
+
+The source code is in my GitHub repository https://github.com/Zanaad/docker in the
+directory example-frontend. I created a Web Service on Render, connected it to that
+repository and selected Docker as the runtime, with example-frontend as the root
+directory. Render builds the image from the Dockerfile in that directory: the first
+stage installs the npm packages and builds the static React files with npm run build,
+and the second stage serves the build folder with the npm package serve on port 5000.
+Render detects the port, runs the container and gives the app a public https URL.
+
+Only the frontend is deployed, so the buttons that need the backend do not work,
+but the page itself is served from the container in the cloud.
